@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Historial de Actividades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="historial-content">
+
+  <div *ngIf="historial.length === 0" class="empty-message">
+    <ion-icon name="time-outline" size="large"></ion-icon>
+    <p>No hay actividades registradas aún.</p>
+  </div>
+
+  <ion-list *ngIf="historial.length > 0">
+    <ion-item *ngFor="let quiz of historial">
+      <ion-label>
+        <h2>{{ quiz.nombre }}</h2>
+        <p>Fecha: {{ quiz.fecha | date:'short' }}</p>
+        <p>Puntaje: {{ quiz.puntaje }} / {{ quiz.total }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

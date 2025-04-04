@@ -1,0 +1,22 @@
+.resultado-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .resultado-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .icono-trofeo {
+    color: gold;
+    margin-bottom: 12px;
+  }
+  

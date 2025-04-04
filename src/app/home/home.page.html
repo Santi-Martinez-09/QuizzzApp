@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>QuizzzApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content">
+
+  <!-- Mensaje de bienvenida -->
+  <div class="welcome-box">
+    <h2>¡Bienvenido a QuizzzApp!</h2>
+    <p>Presiona el botón para comenzar una actividad.</p>
+  </div>
+
+  <!-- Botón para iniciar el quiz -->
+  <div class="start-button-container">
+    <ion-button expand="block" color="secondary" [routerLink]="['/quiz']">
+      <ion-icon name="play-outline" slot="start"></ion-icon>
+      Iniciar Quiz
+    </ion-button>
+  </div>
+
+</ion-content>

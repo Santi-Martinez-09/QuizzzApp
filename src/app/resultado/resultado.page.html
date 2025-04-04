@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Resultados del Quiz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="resultado-container" fullscreen>
+  <div class="resultado-card">
+    <ion-icon name="trophy-outline" size="large" class="icono-trofeo"></ion-icon>
+    <h2>{{ quizTitle }}</h2>
+    <h3>Puntaje: {{ puntajeObtenido }} / {{ puntajeTotal }}</h3>
+    <p>{{ mensajeResultado }}</p>
+
+    <ion-button expand="block" color="success" routerLink="/home">
+      <ion-icon name="home-outline" slot="start"></ion-icon>
+      Volver al inicio
+    </ion-button>
+
+    <ion-button expand="block" color="medium" routerLink="/historial">
+      <ion-icon name="time-outline" slot="start"></ion-icon>
+      Ver Historial
+    </ion-button>
+  </div>
+</ion-content>
