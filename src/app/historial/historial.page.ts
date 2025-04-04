@@ -1,32 +1,28 @@
-import { Component, OnInit } from '@angular/core';
-import { Firestore, collection, collectionData } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-
-interface QuizHistorial {
-  nombre: string;
-  fecha: Date;
-  puntaje: number;
-  total: number;
-}
+import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-historial',
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
   templateUrl: './historial.page.html',
   styleUrls: ['./historial.page.scss'],
 })
-export class HistorialPage implements OnInit {
-  historial: QuizHistorial[] = [];
+export class HistorialPage {
+  historial: any[] = [
+    {
+      titulo: 'Quiz 1',
+      fecha: new Date(),
+      puntaje: 8
+    },
+    {
+      titulo: 'Quiz 2',
+      fecha: new Date(),
+      puntaje: 6
+    }
+  ];
 
-  constructor(private firestore: Firestore) {}
-
-  ngOnInit() {
-    const historialRef = collection(this.firestore, 'historial');
-    collectionData(historialRef, { idField: 'id' }).subscribe((data: any) => {
-      // Si 'fecha' viene como Timestamp, convertirlo
-      this.historial = data.map((item: any) => ({
-        ...item,
-        fecha: item.fecha?.toDate ? item.fecha.toDate() : item.fecha,
-      }));
-    });
-  }
+  constructor() {}
 }

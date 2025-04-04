@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-resultado',
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
   templateUrl: './resultado.page.html',
   styleUrls: ['./resultado.page.scss'],
 })

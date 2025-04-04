@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-// import { GuardianService } from './services/guardian/guardian.service'; // Desactivado temporalmente
+import { GuardianService } from './services/guardian/guardian.service'; // Desactivado temporalmente
 
 export const routes: Routes = [
   {
